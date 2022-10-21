@@ -1,9 +1,11 @@
 import Link from "next/link";
-import React from "react";
+import Layout from "../components/layout";
 
 const About = () => {
     return ( 
-        <Link href="/" >Inicio </Link>
+        <Layout>
+            <Link href="/" >Inicio </Link>
+        </Layout>
     );
 }
 
