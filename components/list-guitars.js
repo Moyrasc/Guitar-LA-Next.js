@@ -1,7 +1,6 @@
 const ListGuitars = () => {
     return ( 
-        <>
-        </>
+        <div>listado guitarras </div>
     );
 }
  
