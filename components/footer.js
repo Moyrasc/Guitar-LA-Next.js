@@ -8,10 +8,11 @@ const Footer = () => {
                 <nav className={styles.nav}>
                     <Link href="/"> Inicio </Link>
                     <Link href="/about"> Nosotros </Link>
-                    <Link href="/blog"> Blog </Link>
                     <Link href="/store"> Tienda </Link>
+                    <Link href="/blog"> Blog </Link>
+                    
                 </nav>
-                <p className="copyright">&copy; Todos los derechos reservados {new Date().getFullYear()}</p>
+                <p className={styles.copy}>&copy; Todos los derechos reservados {new Date().getFullYear()}</p>
             </div>
         </footer>
     );

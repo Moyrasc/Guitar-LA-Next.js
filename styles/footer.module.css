@@ -21,13 +21,14 @@
     }
 }
 .nav a,
-.copyright {
+.copy {
     color: var(--white);
     font-size: 2.2 rem;
     text-decoration: none;
     font-weight: 700;
 
 }
-.copyright {
+.copy {
     text-align: center;
+    
 }

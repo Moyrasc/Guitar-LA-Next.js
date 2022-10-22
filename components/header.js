@@ -23,13 +23,12 @@ const Header = () => {
                 <Link href="/about"> 
                     <a className={router.pathname === "/about" ? styles.active : ""}> Nosotros </a>
                 </Link>
-                <Link href="/blog">
-                    <a className={router.pathname === "/blog" ? styles.active : ""}> Blog </a> 
-                </Link>
                 <Link href="/store"> 
                     <a className={router.pathname === "/store" ? styles.active : ""}> Tienda </a> 
                 </Link>
-
+                <Link href="/blog">
+                    <a className={router.pathname === "/blog" ? styles.active : ""}> Blog </a> 
+                </Link>
             </nav>
         </div>
     </header>
