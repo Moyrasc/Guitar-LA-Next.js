@@ -5,7 +5,7 @@ const Page404 = () => {
     return ( 
         <Layout
         title="Página no encontrada">
-            <p className="error">Página no encontrada -404</p>
+            <p className="error">Página no encontrada - 404</p>
             <Link href="/">
             <a className="error-link">
                 Ir a inicio
@@ -13,7 +13,7 @@ const Page404 = () => {
             </Link>
         </Layout>
         
-     );
+    );
 }
 
 export default Page404;
