@@ -2,7 +2,7 @@
   --primary: #e99401;
   --black: #262626;
   --white: #FFF;
-  --fuente-principal: 'Outfit', sans-serif;
+  --font-main: 'Outfit', sans-serif;
 }
 html {
   font-size: 62.5%;
@@ -15,7 +15,7 @@ html {
 
 body {
   font-size: 2rem;
-  font-family: var(--fuente-principal);
+  font-family: var(--font-main);
   line-height: 1.5;
 }
 img {
