@@ -1,11 +1,29 @@
+import { useState } from "react";
 import Layout from "../../components/layout";
 import Image from "next/future/image";
 import styles from "../../styles/guitars.module.css"
 
-const Product = ({guitar}) => {
-
+const Product = ({guitar, addShoppingCar}) => {
+    const [amount, setAmount] = useState(0)
     const {name, description, image, price} = guitar[0].attributes
-
+    
+    const handleSubmit = e => {
+        e.preventDefault()
+        
+        if ( amount < 1 ){
+            alert('Seleccione una cantidad')
+            return
+        }
+        const guitarSelect = {
+            id: guitar[0].id,
+            image: image.data.attributes.url,
+            name,
+            price,
+            amount
+        }
+        // agregando la info a Context 
+        addShoppingCar(guitarSelect)
+    }
     return ( 
         <Layout
         title={ `Guitarra ${name}` }
@@ -17,9 +35,9 @@ const Product = ({guitar}) => {
                 <p className={styles.description}>{description}</p>
                 <p className={styles.price}>${price}</p>
 
-                <form className={styles.form}>
+                <form className={styles.form} onSubmit={handleSubmit}>
                     <label htmlFor="amount"> Cantidad </label>
-                    <select name="amount" id="amount">
+                    <select onChange={e => setAmount(Number(e.target.value))}name="amount" id="amount">
                         <option value="0"> -- Seleccione --</option>
                         <option value="1"> 1 </option>
                         <option value="2"> 2 </option>
