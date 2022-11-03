@@ -6,6 +6,12 @@ import Image from "next/future/image.js";
 
 const ShoppingCar = ({shoppingCar, updateAmount}) => {
     const [total, setTotal] = useState(0)
+
+    useEffect(()=>{
+        //el primer parametro es el acumulado, irá sumando las cantidades en cada iteración y el segundo el elemento del arreglo sobre el cual esta iterando
+        const sumPrice = shoppingCar.reduce((total,product )=> total + (product.amount * product.price), 0)
+        setTotal(sumPrice)
+    },[shoppingCar])
     return (       
         <Layout
         title="Carrito compras">
