@@ -4,7 +4,7 @@ import Layout from "../components/layout.js"
 import styles from "../styles/shoppingCar.module.css"
 import Image from "next/future/image.js";
 
-const ShoppingCar = ({shoppingCar, updateAmount}) => {
+const ShoppingCar = ({shoppingCar, updateAmount, deleteProduct}) => {
     const [total, setTotal] = useState(0)
 
     useEffect(()=>{
@@ -42,10 +42,12 @@ const ShoppingCar = ({shoppingCar, updateAmount}) => {
                                             <option value="4"> 4 </option>
                                         </select>
                                     </div>
-                                    <p className={styles.precio}> $ <span>{product.price}</span></p>
+                                    <p className={styles.price}> $ <span>{product.price}</span></p>
                                     <p className={styles.subtotal}> Subtotal: $<span> {product.amount * product.price}</span></p>
                                 </div>
-
+                                    <button className={styles.delete} type="button" onClick={() => deleteProduct(product.id)}>
+                                        X 
+                                    </button>
                             </div>
                         )))}
                     </div>
@@ -55,8 +57,7 @@ const ShoppingCar = ({shoppingCar, updateAmount}) => {
                     </aside>
                 </div>
             </main>
-        </Layout>
-       
+        </Layout>      
     );
 }
 
