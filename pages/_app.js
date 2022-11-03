@@ -2,11 +2,17 @@ import { useState, useEffect } from "react";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  
+
 //Esto se crea para que el código se ejecute en la parte del cliente y no en la del servidor // utilizamos JSON.parse para convertir de string a Array
   const shoppingLS = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('shoppingCar')) ?? [] : []
   const [shoppingCar, setShoppingCar] = useState(shoppingLS);
+  const [pageReady, setPageReady] = useState(false)
 
+  // Con este useEffect arreglamos el problema de hidratación
+  useEffect(()=>{
+    setPageReady(true)
+  },[])
+  
   useEffect(()=> {
     //como localStorage solo puede almacenar strings, le pasamos el carrito para que lo convierta
     localStorage.setItem('shoppingCar', JSON.stringify(shoppingCar))
@@ -49,15 +55,15 @@ function MyApp({ Component, pageProps }) {
     window.localStorage.setItem('shoppingCar', JSON.stringify( shoppingCar ));
   }
   return (
-
+    pageReady ? 
     <Component
       {...pageProps}
       shoppingCar={shoppingCar}
       addShoppingCar={addShoppingCar}
       deleteProduct={deleteProduct}
       updateAmount={updateAmount}
-    />
-  );
+    /> : null
+  )
 }
 
 export default MyApp;
