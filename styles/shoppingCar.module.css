@@ -1,11 +1,11 @@
-.contents {
+.content {
   display: grid;
   align-items: flex-start;
   gap: 5rem;
 }
 @media (min-width: 768px) {
-  .contents {
-    grid-template-colums: 3fr 2fr;
+  .content {
+    grid-template-columns: 3fr 2fr;
   }
 }
 .shopping {
@@ -13,7 +13,7 @@
 }
 .product {
   display: grid;
-  grid-template-colums: 1fr 3fr;
+  grid-template-columns: 1fr 3fr;
   gap: 4rem;
   align-items: center;
   padding: 3rem 0;
@@ -36,7 +36,7 @@
 .select {
   all: unset;
   border: 1px solid var(--black);
-  padding: 0.5rem;
+  padding: 0.4rem;
   border-radius: 1rem;
   text-align: center;
   width: 100%;
@@ -47,6 +47,7 @@
   color: var(--primary);
 }
 .subtotal {
+  font-size: 2rem;
 }
 
 .summary {
